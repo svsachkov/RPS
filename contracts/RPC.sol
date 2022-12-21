@@ -35,7 +35,7 @@ contract RPC {
     }
 
 
-    uint256 gameCount;
+    uint256 public gameCount = 0;
     mapping(uint256 => Game) games;
 
     uint256 revealTimeout = 1 days;
