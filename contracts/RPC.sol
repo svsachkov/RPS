@@ -43,10 +43,10 @@ contract RPC {
 
     address payable anybody = payable(address(0));
 
-    constructor(uint256 _revealTimeout, uint256 _joinTimeout) {
-        revealTimeout = _revealTimeout;
-        joinTimeout = _joinTimeout;
-    }
+    // constructor(uint256 _revealTimeout, uint256 _joinTimeout) {
+    //     revealTimeout = _revealTimeout;
+    //     joinTimeout = _joinTimeout;
+    // }
 
     modifier stageEqual(uint256 gameId, Stage stage) {
         require(games[gameId].stage == stage, "incorrect game stage for calling this method");
@@ -78,7 +78,7 @@ contract RPC {
     }
 
     function createGame(bytes32 encryptedPick, address payable opponent) private returns(uint256) {
-        require(msg.value > 0, "cannot create games with non-positive deposits. Provide msg.value");
+        //require(msg.value > 0, "cannot create games with non-positive deposits. Provide msg.value");
 
         gameCount += 1;
 

@@ -24,15 +24,13 @@ describe("Test", function(){
     describe("Caller tests", () => {
         it("should create game", async () => {
 
-            const gamesTotalBefore = await rps.connect(account).gameCount();
-            expect(gamesTotalBefore).to.equal(0);
+            expect(await rps.gameCount()).to.equal(0);
 
             await caller.connect(account).callFunction(
                 "0xa4cb272a1e397e5e8e2eb92da9620f56e838f90ccbff21f7610d41027ae09b41"
             );
 
-            const gamesTotalAfter = await rps.gameCount();
-            expect(gamesTotalAfter).to.equal(1);
+            expect(await rps.connect(account).gameCount()).to.equal(1);
         });
     });
 });
